@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gb0173hst-go-gitops
+  description: This is GitOps manifest for gb0173hst-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=gb0173hst-go
+    backstage.io/kubernetes-id: gb0173hst-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: gb0173hst-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gb0173hst-go
